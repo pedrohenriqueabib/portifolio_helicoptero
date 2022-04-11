@@ -33,6 +33,7 @@ document.addEventListener('keydown', (e)=>{
 document.addEventListener('keyup', (e)=>{
     if( e.key == 'ArrowUp' || e.key == 'ArrowDown'){
         moving = false;
+        console.log(up);
     }
     if( e.key == ' '){
         atirando = false;
@@ -42,7 +43,7 @@ document.addEventListener('keyup', (e)=>{
 start.addEventListener('click', ()=>{
     start.style.display = 'none';
     heroe.style.display = 'block';
-    barra.style.background = `url("../imgs/energia${energia}.png")`;
+    barra.style.display = 'block';
     moverApache();
     shoot();
     moveShoot();
@@ -54,7 +55,6 @@ start.addEventListener('click', ()=>{
     moverAmigo();
     morteAmigo();
     colisaoApache();
-    clearInterval(tocarMusica);
 })
 
 function moverApache(){
@@ -63,11 +63,11 @@ function moverApache(){
             up -= 10;
             heroe.style.top = up + 'px';
         }
-        if( moving == 'ArrowDown' && up < 480){  
+        if( moving == 'ArrowDown' && up < 430){  
             up += 10;
             heroe.style.top = up + 'px';
         }
-    }, 20);
+    }, 20);    
 }
 
 function shoot(){
@@ -91,7 +91,7 @@ function moveShoot(){
             projeteis.forEach((projetil)=>{
                 let range = parseInt( projetil.style.left) + 25;
                 projetil.style.left = range + 'px';
-                if( range >= 1300){
+                if( range >= 1250){
                     projetil.remove();
                     disparo--;
                 }
@@ -108,7 +108,7 @@ function criarInimigo1(){
             voador.classList.add('voador');
             let topo = Math.random() *(300-10)+10;
             voador.style.top = topo.toFixed() + 'px';
-            voador.style.left = '1090px';
+            voador.style.left = '1040px';
             areaTiro.appendChild(voador);
             totalVoador++;
         }
@@ -118,8 +118,8 @@ function criarInimigo1(){
 function criarInimigo2(){
     criarVoador = setInterval(()=>{
         let terrestre = document.createElement('div');
-        terrestre.style.left = '1190px';
-        terrestre.style.top = '475px';
+        terrestre.style.left = '1100px';
+        terrestre.style.top = '440px';
         terrestre.classList.add('inimigo');
         terrestre.classList.add('terrestre');
         areaTiro.appendChild(terrestre);
@@ -278,12 +278,8 @@ function gameOver(){
 }
 
 function nivelEnergia(valor){
-    barra.style.background = `url('../imgs/energia${valor}.png')`;
+    barra.style.background = `url('./imgs/energia${valor}.png')`;
     if( valor == 0){
         gameOver();
     }
 }
-
-let tocarMusica = setInterval(()=>{
-    musica.play();
-}, 10);

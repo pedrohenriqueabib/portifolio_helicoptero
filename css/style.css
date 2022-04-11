@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    border: 0;
 }
 
 body{
@@ -32,9 +33,9 @@ body{
     background-image: url('../imgs/fundo_game.jpg');
     position: absolute;
     top: 35px;
-    left: 75px;
-    width: 1350px;
-    height: 650px;
+    left: 20px;
+    width: 1300px;
+    height: 600px;
     background-repeat: repeat-x;
     animation: moverFundoGame 600s infinite;
 }
@@ -51,7 +52,7 @@ body{
 }
 
 .area-tiro{
-    height: 650px;
+    height: 500px;
 }
 
 .shoot{
@@ -82,7 +83,7 @@ body{
     width: 44px;
     height: 51px;
     position: absolute;
-    top: 490px;
+    top: 460px;
 }
 
 .amigoMorto{
@@ -90,7 +91,7 @@ body{
     width: 44px;
     height: 51px;
     position: absolute;
-    top: 490px;
+    top: 460px;
     animation: morteAmigo 1s steps(7);
 }
 
@@ -125,14 +126,16 @@ body{
     height: 38px;
     top: 15px;
     right: 5px;
+    background-image: url("../imgs/energia3.png");
+    display: none;
 }
 
 .pontuacao{
     position: absolute;
     background-color: rgb(107, 103, 103);
     color: yellow;
-    top: 20px;
-    left: 75px;
+    top: 10px;
+    left: 20px;
     font-size: 25px;
     width: 300px;
     text-align: end;
