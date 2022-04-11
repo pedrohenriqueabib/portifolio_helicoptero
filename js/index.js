@@ -3,6 +3,7 @@ const heroe = document.querySelector('#heroe');
 const areaTiro = document.querySelector('.area-tiro');
 const barra = document.querySelector('.barra');
 let pontuacao = document.querySelector('.pontuacao');
+const instrucao = document.querySelector('.instrucao');
 
 let somDisparo = document.getElementById("somDisparo");
 let somExplosao = document.getElementById("somExplosao");
@@ -41,6 +42,7 @@ document.addEventListener('keyup', (e)=>{
 })
 
 start.addEventListener('click', ()=>{
+    instrucao.style.display = 'none';
     start.style.display = 'none';
     heroe.style.display = 'block';
     barra.style.display = 'block';

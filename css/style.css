@@ -1,11 +1,23 @@
 *{
     margin: 0;
     padding: 0;
-    border: 0;
 }
 
 body{
     background-image: url('../imgs/fundo.jpg');
+}
+
+.instrucao{
+    position: absolute;
+    color: rgb(116, 50, 50);
+    background-color: white;
+    font-size: 30px;
+    padding: 10px;
+    border: 10px solid rgb(116, 50, 50);;
+    text-align: justify;
+    top: 100px;
+    left: 320px;
+    width: 50%;
 }
 
 .start{
