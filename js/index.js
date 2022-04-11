@@ -235,7 +235,7 @@ function moverAmigo(){
         if(amigo){
             let distancia = parseInt(amigo.style.left) + 5;
             amigo.style.left = distancia + 'px';
-            if( distancia >= 1325){
+            if( distancia >= 1270){
                 amigo.remove();
                 somResgate.play();
                 totalAmigos--;
